@@ -92,9 +92,11 @@ if st.sidebar.button("start"):
     col1, col2 = st.columns(2)
     with col1: 
         st.write("k-word List Table for Sequence J")
+        st.write("Sequence J:", sequence_j_str)
         st.dataframe(df_j, use_container_width=True)
     with col2: 
         st.write("k-word List Table for Sequence I")
+        st.write("Sequence I:", sequence_i_str)
         st.dataframe(df_i, use_container_width=True)
     
     #Library to store matching sequence 
@@ -115,7 +117,7 @@ if st.sidebar.button("start"):
                 if key in Sl_dict:
                     Sl_dict[key] += 1
     # Konversi kamus Sl_dict ke DataFrame
-    df = pd.DataFrame(list(Sl_dict.items()), columns=['S', 'Sl'])
+    df = pd.DataFrame(list(Sl_dict.items()), columns=['l', 'Sl'])
     # Transpose the DataFrame
     transposed_df = df.transpose()  # Using .transpose() method
     # OR
